@@ -3,8 +3,8 @@
 ## 环境配置
 
 * [Python安装](README.md)
-* [PyCharm(IDE)安装](huan-jing-pei-zhi/pycharmide-an-zhuang.md)
-* [HelloWorld](huan-jing-pei-zhi/helloworld.md)
+* [Spyder(IDE)安装](huan-jing-pei-zhi/pycharmide-an-zhuang.md)
+* [运行第一个程序](huan-jing-pei-zhi/helloworld.md)
 
 ## 爬虫-获取行情数据
 
