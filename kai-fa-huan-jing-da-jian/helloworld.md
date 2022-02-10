@@ -9,3 +9,6 @@ Python 是一种解释型的脚本编程语言，这样的编程语言一般支�
 
 关于以上两种编程方式的具体介绍，可以查看：[http://c.biancheng.net/view/7032.html](http://c.biancheng.net/view/7032.html)
 
+## 编写第一个程序
+
+分别使用以上两种方式来编写并运行一个程序。

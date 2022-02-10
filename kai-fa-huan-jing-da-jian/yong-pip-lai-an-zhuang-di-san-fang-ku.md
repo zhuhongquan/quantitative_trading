@@ -12,7 +12,7 @@ description: Python 拥有丰富的第三方库，这使得我们可以站在巨
 
 ![](<../.gitbook/assets/image (1).png>)
 
-点击打开numpy的详细页面numpy，可以复制它的安装命令（pip install numpy），在页面左边的 Project links 中还有 Pillow 的官网链接和文档链接：
+点击打开numpy的详细页面numpy，可以复制它的安装命令（pip install numpy），在页面左边的 Project links 中还有 numpy 的官网链接和文档链接：
 
 ![](../.gitbook/assets/image.png)
 
