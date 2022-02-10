@@ -1,10 +1,11 @@
 # Table of contents
 
-## 环境配置
+## 开发环境搭建
 
 * [Python安装](README.md)
-* [Spyder(IDE)安装](huan-jing-pei-zhi/pycharmide-an-zhuang.md)
-* [运行第一个程序](huan-jing-pei-zhi/helloworld.md)
+* [Spyder(IDE)安装](kai-fa-huan-jing-da-jian/pycharmide-an-zhuang.md)
+* [运行第一个程序](kai-fa-huan-jing-da-jian/helloworld.md)
+* [用pip来安装第三方库](kai-fa-huan-jing-da-jian/yong-pip-lai-an-zhuang-di-san-fang-ku.md)
 
 ## 爬虫-获取行情数据
 
@@ -15,7 +16,7 @@
 ## 交易策略
 
 * [设计一个朴素的策略](jiao-yi-ce-lve/she-ji-yi-ge-pu-su-de-ce-lve.md)
-* [完善策略](jiao-yi-ce-lve/wan-shan-ce-lve.md)
+* [改进交易策略](jiao-yi-ce-lve/gai-jin-jiao-yi-ce-lve.md)
 
 ## 股票回测
 
@@ -27,6 +28,7 @@
 
 * [添加注释](ruan-jian-ce-shi-yu-zhi-liang-bao-zheng/tian-jia-zhu-shi.md)
 * [调试测试](ruan-jian-ce-shi-yu-zhi-liang-bao-zheng/tiao-shi-ce-shi.md)
+* [编码风格规范示例](ruan-jian-ce-shi-yu-zhi-liang-bao-zheng/bian-ma-feng-ge-gui-fan-shi-li.md)
 * [可视化](ruan-jian-ce-shi-yu-zhi-liang-bao-zheng/ke-shi-hua.md)
 
 ## 进阶
@@ -37,5 +39,4 @@
 
 ## 发布和维护
 
-* [服务器端(后端)部署](fa-bu-he-wei-hu/fu-wu-qi-duan-hou-duan-bu-shu.md)
-* [前端设计](fa-bu-he-wei-hu/qian-duan-she-ji.md)
+* [发布和维护](fa-bu-he-wei-hu/fa-bu-he-wei-hu.md)
