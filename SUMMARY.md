@@ -3,9 +3,9 @@
 ## 开发环境搭建
 
 * [Python安装](README.md)
+* [用pip来安装第三方库](kai-fa-huan-jing-da-jian/yong-pip-lai-an-zhuang-di-san-fang-ku.md)
 * [Spyder(IDE)安装](kai-fa-huan-jing-da-jian/pycharmide-an-zhuang.md)
 * [运行第一个程序](kai-fa-huan-jing-da-jian/helloworld.md)
-* [用pip来安装第三方库](kai-fa-huan-jing-da-jian/yong-pip-lai-an-zhuang-di-san-fang-ku.md)
 
 ## 爬虫-获取行情数据
 
