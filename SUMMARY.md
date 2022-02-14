@@ -8,6 +8,7 @@
 * [用pip来安装第三方库](stage1-kai-fa-huan-jing-da-jian/yong-pip-lai-an-zhuang-di-san-fang-ku.md)
 * [Spyder(IDE)安装](stage1-kai-fa-huan-jing-da-jian/pycharmide-an-zhuang.md)
 * [运行第一个程序](stage1-kai-fa-huan-jing-da-jian/helloworld.md)
+* [\*实验](stage1-kai-fa-huan-jing-da-jian/shi-yan.md)
 
 ## STAGE2: 爬虫-获取行情数据
 
