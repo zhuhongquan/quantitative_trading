@@ -35,3 +35,7 @@ Spyder的右下角是交互式编程区域，在此区域内，我们逐行输�
 然后点击"run"，运行该文件，终端便输出了结果。
 
 ![](<../.gitbook/assets/image (6).png>)
+
+## Tips
+
+大家应该都已经发现了Python与Java/C/C++之类语言的不同，它的代码并不一定要求被包裹在“函数(方法)”里，但实际上，为了提高应用的模块性和代码的重复利用率，我们一般也需要将Python代码组织成函数模块的形式：[https://www.runoob.com/python3/python3-function.html](https://www.runoob.com/python3/python3-function.html)。
