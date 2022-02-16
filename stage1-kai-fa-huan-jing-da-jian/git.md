@@ -53,3 +53,15 @@ Linus 为了管理 Linux 内核用了 10 天写出来的
 * git reset --hard 将仓库和工作区切换到某个版本的状态
 * git checkout 将工作区中的某些文件切换到某个版本的状态
 * 具体用法：--help/官方文档
+
+## .gitignore
+
+* 用于告知 git 忽略某些文件
+  * 典型地：编译后的文件、可以通过网络安装的依赖等
+* 场景
+  * git add --all
+  * git log
+
+## 其它
+
+Git 主要用于管理纯文本文件，对于二进制文件，`git diff`会失效，这也是很多文档使用 Markdown 而不是 docx 来写的原因。
