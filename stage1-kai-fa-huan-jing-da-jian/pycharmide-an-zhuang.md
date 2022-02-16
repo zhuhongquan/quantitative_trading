@@ -15,6 +15,6 @@ pip install spyder -i http://mirrors.aliyun.com/pypi/simple/
 
 Spyder依赖很多第三方库，在安装Spyder时，它会帮我们自动安装。几分钟后，安装应该完成了，如果终端出现Successfully installed，说明安装成功！然后我们在终端内直接输入spyder，按下回车，就可以打开了。
 
-![](<../.gitbook/assets/image (4) (1).png>)
+![](<../.gitbook/assets/image (4) (1) (1).png>)
 
 ![](../.gitbook/assets/image.png)
