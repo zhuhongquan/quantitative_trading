@@ -65,3 +65,9 @@ Linus 为了管理 Linux 内核用了 10 天写出来的
 ## 其它
 
 Git 主要用于管理纯文本文件，对于二进制文件，`git diff`会失效，这也是很多文档使用 Markdown 而不是 docx 来写的原因。
+
+## 小结
+
+* 讲完了“冰山一角”：Git 的工作流程与概念
+* 需要在实践中学习
+* 参考：[《Pro Git》](https://git-scm.com/book/zh/v2)
