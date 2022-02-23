@@ -4,6 +4,12 @@ description: 爬虫：请求网站，并提取数据的自动化程序请求网�
 
 # 爬虫基础
 
+## HTML
+
+HTML简介：[https://www.runoob.com/html/html-intro.html](https://www.runoob.com/html/html-intro.html)
+
+HTML的本质就是一棵“树”，爬虫的目的就是从这个“树”中获取自己需要的信息。
+
 ## 爬虫基本流程
 
 第一步：发起请求。一般是通过HTTP库，对目标站点进行请求（request）。等同于自己打开浏览器，输入网址。
@@ -28,7 +34,7 @@ description: 爬虫：请求网站，并提取数据的自动化程序请求网�
 
 * 请求方式： 主要有GET, POST两种类型，另外还有HEAD, PUT, DELETE, OPTIONS等。\
   GET特点：请求的参数全部包含在请求的网址内。\
-  POST特点： 需要构造Form Data才能发起请求
+  POST特点： 需要构造Form Data（也就是参数）才能发起请求。
 * 请求URL：URL的全名是统一资源定位符。网络上的一切资源都是位于服务器的某一个位置，而URL就是告知浏览器去哪里获取这些资源。
 * 请求头：请求头（header）就是告诉服务器你是谁，包括User-gaget,Host,Cookies等信息。添加请求头信息，保证请求合法
 * 请求体：请求时包含的额外数据，如POST请求需要输入的表单数据，一般用于模拟登陆。
@@ -52,15 +58,36 @@ description: 爬虫：请求网站，并提取数据的自动化程序请求网�
 
 ## 代码示例
 
+### 1. 用get请求爬取一个网页
+
 ```python
-# 导入请求库
 import requests
-# 请求网页
-response = requests.get('http://www.baidu.com')
-# 查看响应体内容
-print(response.text)
-print(response.content)
-print(response.headers)
-print(response.status_code)
+
+res = requests.get(url="https://finance.sina.com.cn/china/gncj/2022-02-23/doc-imcwiwss2403820.shtml")
+res.encoding = "utf-8"  # 一般根据网页的编码来确定(可以试一下不写这行代码的区别)
+print(res)  # <Response [200]>  为什么？
+print(res.headers)
+print(res.status_code)
+print(res.text)
 ```
 
+### 2. BeautifulSoup提取特定网页元素的内容
+
+直接用.text获取网页的话，内容很多，格式也比较乱，那我们如何获取特定的信息？——BeautifulSoup
+
+BeautifulSoup库基础及一般元素提取方法：[https://www.cnblogs.com/hanmk/p/8724162.html](https://www.cnblogs.com/hanmk/p/8724162.html)
+
+```python
+soup = BeautifulSoup(res.text, features="html.parser")
+# 获取网页<head>中的<title>
+title = soup.head.title.string
+print(title)
+
+# 找到正文
+artibody = soup.find(name="div", attrs={'id': 'artibody'})
+content = artibody.find_all('p')  # 获取到的是<p>元素对象列表，不是字符串列表
+print(content)
+# 获取字符串（文本内容）
+for i in content:
+    print(i.string)  # 使用.string就可以获得字符串了
+```
