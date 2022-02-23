@@ -77,6 +77,8 @@ print(res.text)
 
 BeautifulSoup库基础及一般元素提取方法：[https://www.cnblogs.com/hanmk/p/8724162.html](https://www.cnblogs.com/hanmk/p/8724162.html)
 
+具体问题具体分析，需要根据自己的应用场景选择合适的方法，下面是一个获取新闻正文内容的例子：
+
 ```python
 soup = BeautifulSoup(res.text, features="html.parser")
 # 获取网页<head>中的<title>
