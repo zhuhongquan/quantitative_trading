@@ -8,13 +8,13 @@ description: Python 拥有丰富的第三方库，这使得我们可以站在巨
 
 一般来说，我们要安装的第三方库都是可以在 Python 官方的 Python 库索引网站 [PyPI ](https://pypi.org)找到的，比如后面要用到的科学计算库 numpy：
 
-![](<../.gitbook/assets/image (2) (1) (1).png>)
+![](<../.gitbook/assets/image (2) (1) (1) (1).png>)
 
 ![](<../.gitbook/assets/image (1) (1) (1).png>)
 
 点击打开numpy的详细页面numpy，可以复制它的安装命令（pip install numpy），在页面左边的 Project links 中还有 numpy 的官网链接和文档链接：
 
-![](<../.gitbook/assets/image (2) (1).png>)
+![](<../.gitbook/assets/image (2) (1) (1).png>)
 
 一般来说，我们知道一个第三方库的名字之后，可以直接`pip install xxxx`。不过pip默认使用的国外下载源通常比较慢，可以将其更换为国内的镜像源：\
 linux, window: [https://blog.csdn.net/yuzaipiaofei/article/details/80891108](https://blog.csdn.net/yuzaipiaofei/article/details/80891108)\

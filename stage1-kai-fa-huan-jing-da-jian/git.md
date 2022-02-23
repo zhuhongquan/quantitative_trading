@@ -39,7 +39,7 @@ Linus 为了管理 Linux 内核用了 10 天写出来的
 * 已暂存（Staged）
 * git status 查看状态
 
-![git status 查看状态](<../.gitbook/assets/image (2).png>)
+![git status 查看状态](<../.gitbook/assets/image (2) (1).png>)
 
 ![文件状态的转换](<../.gitbook/assets/image (7) (1).png>)
 
