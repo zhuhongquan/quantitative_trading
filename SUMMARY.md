@@ -16,6 +16,7 @@
 * [爬虫基础](stage2-pa-chong-huo-qu-hang-qing-shu-ju/pa-chong-ji-chu.md)
 * [数据获取及保存](stage2-pa-chong-huo-qu-hang-qing-shu-ju/shu-ju-huo-qu-ji-bao-cun.md)
 * [反爬虫机制](stage2-pa-chong-huo-qu-hang-qing-shu-ju/fan-pa-chong-ji-zhi.md)
+* [\*实验2](stage2-pa-chong-huo-qu-hang-qing-shu-ju/shi-yan-2.md)
 
 ## STAGE3: 交易策略
 
