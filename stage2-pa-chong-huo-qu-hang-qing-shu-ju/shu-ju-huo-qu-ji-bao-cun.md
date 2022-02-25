@@ -47,3 +47,11 @@ for i in content:
 ### 数据的保存
 
 先尝试一下最基本的方法：写入本地.txt文件。
+
+一个写入.csv的样例（对于复杂的数据写入，应该使用专业的库，例如pandas，都有write\_csv等等方法）
+
+```python
+list1 = ["股票代码", "股票名", "1", "2", "3", "15"]
+with open("csv_demo.csv", "w", encoding="utf_8_sig") as f1:
+    f1.write(",".join(list1))
+```
