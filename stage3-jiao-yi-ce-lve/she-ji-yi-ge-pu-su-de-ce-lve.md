@@ -12,7 +12,7 @@
 
 MA是“移动平均线”的简称，后面的数字：5、10、20.....是时间周期。例如，若以天为单位，则MA10为前十天平均价格，如何计算？——大盘10天的收盘价格再除以10即可。
 
-看一个例子：[招商银行](https://wallstreetcn.com/c/chart?symbol=600036.SS\&interval=1D\&description=%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8C)
+看一个例子：[宁德时代](https://wallstreetcn.com/c/chart?symbol=300750.SZ\&interval=1D\&description=%E5%AE%81%E5%BE%B7%E6%97%B6%E4%BB%A3)
 
 ## 一个策略
 
