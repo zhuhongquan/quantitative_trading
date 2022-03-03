@@ -111,7 +111,6 @@ if __name__ == "__main__":
     High = [513.84, 513.64, 513.66, 513.69, 513.70]
     Low = [513.64, 513.64, 513.64, 513.48, 513.59]
     Close = [513.84, 513.64, 513.64, 513.64, 513.59]  # 当前bar的结束时间价格
-    is_new_bar = True
 
     cur_time = datetime.now()  # datetime库的用法：https://blog.csdn.net/cmzsteven/article/details/64906245
     while time(9, 30) < cur_time.time() < time(15):
