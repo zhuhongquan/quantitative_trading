@@ -33,17 +33,19 @@ MA是“移动平均线”的简称，后面的数字：5、10、20.....是时�
 ```python
 import requests
 from datetime import datetime, time
+from dateutil.parser import parse
+from time import sleep
 
 def getTick():
     """获取最新股票价格"""
     headers={"Referer": "http://finance.sina.com.cn"}
-    response = requests.get(url="https://hq.sinajs.cn/?format=text&list=sh600519", headers=headers)
+    response = requests.get(url="https://hq.sinajs.cn/?format=text&list=sz300750", headers=headers)
     stock_info = response.text.strip().split(",")
     last = float(stock_info[3])
     trade_datetime = stock_info[30] + " " + stock_info[31]
+    trade_datetime = parse(trade_datetime)  # 将时间字符串转为datetime对象
     tick = (trade_datetime, last)
     return tick
-
 
 def bar_generate(tick, Dt, Open, High, Low, Close):
     """
@@ -56,15 +58,18 @@ def bar_generate(tick, Dt, Open, High, Low, Close):
     :param Close: List[float], 每个bar的最后价格
     :return: Dt, Open, High, Low, Close
     """
-    
-    last_bar_start_minute = None
-    # 每5分钟产生一个新的bar
-    if tick[0].minute % 5 == 0 and tick[0].minute != last_bar_start_minute:
+
+    # 每读取到一个tick，就要把tick[0]-时间存放到Dt的0位置,
+    # tick[1]-价格插入Open, High, Low, Close
+    # 每1分钟产生一个新的bar,如果每5分钟产生一个新bar，该怎么判断？
+    if last_tick[0].minute != Dt[0].minute:
+        print("===============Create a new bar!===============")
+        print("Bar_ID:", len(Dt))
         # 创建一个新的bar
-        ...
+        ......
     else:
         # 更新bar的high/low/close
-        ...
+        ......
     return Dt, Open, High, Low, Close
 
 def strategy(Close):
@@ -73,14 +78,17 @@ def strategy(Close):
     :param Close: List[float], 存放每个bar的最后价格，第一个元素代表当前bar的最新价格
     :return: None
     """
-    # 朴素策略：最新价格<均价*0.95时买入，>均价*1.05时卖出
-    # 根据历史数据，计算出均价(ma20)
-    if 1:  # TODO: 如果新的bar被创建，才需要计算ma20——且听下回分解
-        ...  # 除了当前正在更新的bar以外，计算之前20个已经生成的bar的均值（20*5分钟）
-    if Close[0] < 0.95 * ma20:  # Close[0]是最新价格
+    # 朴素策略：最新价格<均价*0.998时买入，>均价*1.002时卖出
+    # 根据历史数据，计算出均价(ma10)
+    ma10 = 0
+    if len(Close) >= 10 and True:  # TODO: 如果有了10个bar，并且新bar被创建，才需要计算ma10。且听下回分解
+        ......  # 除了当前正在更新的bar以外，计算之前10个已经生成的bar的均值（20*5分钟）
+    if Close[0] < 0.998 * ma10:  # Close[0]是最新价格
+        print("===============进行买入操作===============")
         buy()
-    elif Close[0] > ma20 * 1.05:
-        if 1:  # TODO: 如果之前买过，有long信号，才能卖，没买过是不能卖的——且听下回分解
+    elif Close[0] > ma10 * 1.002:
+        if 1:  # TODO: 如果之前买过，有long信号，才能卖，没买过是不能卖的。且听下回分解
+            print("===============进行卖出操作===============")
             sell()
     else:    # 如果在均线5%附近波动，什么也不操作
         pass
@@ -94,19 +102,24 @@ def sell():
 
 if __name__ == "__main__":
     # 下面是全局变量，用于存放及构建bar，里面已经填充了一些数据，模拟之前的交易日中的数据，以后我们会正式从文件中读取前面交易日的数据
-    Dt = [datetime(2022, 3, 2, 14, 55),  # 最前面的位置是当前bar的开始时间
-          datetime(2022, 3, 2, 14, 50),  # 前一个bar的开始时间
-          datetime(2022, 3, 2, 14, 45)]
-    Open = [45.79, 45.66, 45.72]  # 当前bar的开始时间价格
-    Close = []  # 当前bar的结束时间价格
-    High = []
-    Low = []
+    Dt = [datetime(2022, 3, 2, 14, 59),  # 最前面的位置是当前bar的开始时间
+          datetime(2022, 3, 2, 14, 58),  # 前一个bar的开始时间
+          datetime(2022, 3, 2, 14, 57),
+          datetime(2022, 3, 2, 14, 56),
+          datetime(2022, 3, 2, 14, 55)]
+    Open = [513.64, 513.64, 513.66, 513.63, 513.70]  # 当前bar的开始时间价格
+    High = [513.84, 513.64, 513.66, 513.69, 513.70]
+    Low = [513.64, 513.64, 513.64, 513.48, 513.59]
+    Close = [513.84, 513.64, 513.64, 513.64, 513.59]  # 当前bar的结束时间价格
     is_new_bar = True
 
     cur_time = datetime.now()  # datetime库的用法：https://blog.csdn.net/cmzsteven/article/details/64906245
     while time(9, 30) < cur_time.time() < time(15):
         last_tick = getTick()  # 获取最新的股票数据，一般是每3秒更新一次
         # 获得一个最新价格后就去更新bar
-        Dt, Open, High, Low, Close = bar_generate(last_tick, Dt, Open, High, Low, Close)
-        strategy(Close)
+        ...
+        # 暂停三秒钟
+        ...
+
+
 ```
