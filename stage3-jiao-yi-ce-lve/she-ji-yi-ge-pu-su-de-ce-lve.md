@@ -62,7 +62,7 @@ def bar_generate(tick, Dt, Open, High, Low, Close):
     # 每读取到一个tick，就要把tick[0]-时间存放到Dt的0位置,
     # tick[1]-价格插入Open, High, Low, Close
     # 每1分钟产生一个新的bar,如果每5分钟产生一个新bar，该怎么判断？
-    if last_tick[0].minute != Dt[0].minute:
+    if tick[0].minute != Dt[0].minute:
         print("===============Create a new bar!===============")
         print("Bar_ID:", len(Dt))
         # 创建一个新的bar
