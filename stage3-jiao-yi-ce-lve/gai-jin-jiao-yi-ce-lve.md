@@ -23,6 +23,10 @@ description: >-
 
 ## 一些代码示例
 
+以下内容仅供参考，你还可以将它变得更完善！
+
+### 1、实例属性
+
 ```python
 class AstockTrading:
     def __init__(self, strategy_name):
@@ -32,19 +36,37 @@ class AstockTrading:
         self.High = None
         self.Low = None
         self.Close = None
-        self.Volume = None
         self.ma10 = None
 
         self.money = 100000  # 初始资金10w
         self.isNewBar = False  # 初始设置为False
-        self.current_orders = {  #这里面的
+        # self.current_orders初始应该为空，当买入一次股票时，则往里面添加一个order
+        # 由于字典key不可重名，所以order需要递增，这需要在买入订单时，根据self.order_number计算当前id
+        # 所以当第二次买入时，current_orders里面就应该为order2: {...}
+        self.current_orders = {
             'order1': {'open_price': 1,
                        'open_datetime': '2022-03-03 9:30',
                        'volume': 100,
-                       'close_price': 2,
-                       'close_datetime': 'xxxx'}
+                       'close_price': 2,  # 这个是在卖出时才添加的信息，买入时不需要
+                       'close_datetime': 'xxxx'}  # 这个也是
         }
         self.history_orders = {}
-        self.order_number = 0
+        self.order_number = 0  # 用于计算order_id
+
+```
+
+### 2、主函数
+
+```
+if __name__ == "__main__":
+    trade = AstockTrading("myStrategy")
+    trade.get_history_data_from_local()
+    cur_time = datetime.now()
+    while time(9, 30) < cur_time.time() < time(11, 30) or time(13, 30) < cur_time.time() < time(15):
+        last_tick = getTick()
+        trade.bar_generate(last_tick)
+        print(trade.Dt[0], "HIGH:", trade.High[0], "LOW:", trade.Low[0], "CLOSE:", trade.Close[0])
+        trade.strategy()
+        sleep(3)
 
 ```

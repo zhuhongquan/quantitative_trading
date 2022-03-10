@@ -23,7 +23,7 @@
 * [设计一个朴素的策略](stage3-jiao-yi-ce-lve/she-ji-yi-ge-pu-su-de-ce-lve.md)
 * [插曲：用类改造代码](stage3-jiao-yi-ce-lve/cha-qu-yong-lei-gai-zao-dai-ma.md)
 * [改进交易策略](stage3-jiao-yi-ce-lve/gai-jin-jiao-yi-ce-lve.md)
-* [Page 1](stage3-jiao-yi-ce-lve/page-1.md)
+* [\*实验3](stage3-jiao-yi-ce-lve/shi-yan-3.md)
 
 ## STAGE4: 股票回测
 
