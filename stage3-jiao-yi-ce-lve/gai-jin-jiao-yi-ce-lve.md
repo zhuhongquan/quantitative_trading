@@ -13,9 +13,38 @@ description: >-
 
 ### 买入/卖出逻辑
 
-1. 需要设置一个资金池（定义一个实例属性），代表当前账户余额。
-2. 设置一个实例属性self.current\_orders，类型为字典，存放当前购买的股票信息。
-3. 设置一个实例属性self.history\_orders，类型为字典，存放卖出的股票信息（注意卖出时，是把当前order从current\_orders删除，再添加到history\_orders）。
-4. 如果达到了买入条件（即低于ma10一定价格），那么先判断账户里资金是否足够买100手，如果够，则买入，否则退出（return）。
-5. 如果达到了卖出条件（即高于ma10一定价格），那么判断账户里是否有已购买的，如果有，则一次性全部卖出，否则退出（return)。
-6. 买入卖出时，别忘了对账户余额进行加减。
+1. 为了简化操作，我们默认一次只买100手。
+2. 需要设置一个资金池（定义一个实例属性），代表当前账户余额。（友情提醒：建议设置的资金总量大于300手股票的价格，低于100手则永远无法买入）
+3. 设置一个实例属性self.current\_orders，类型为字典，存放当前购买的股票信息。
+4. 设置一个实例属性self.history\_orders，类型为字典，存放卖出的股票信息（注意卖出时，是把当前order从current\_orders删除，再添加到history\_orders）。
+5. 如果达到了买入条件（即低于ma10一定价格），那么先判断账户里资金是否足够买100手，如果够，则买入，否则退出（return）。
+6. 如果达到了卖出条件（即高于ma10一定价格），那么判断账户里是否有已购买的，如果有，则一次性全部卖出，否则退出（return)。
+7. 买入卖出时，别忘了对账户余额进行加减。
+
+## 一些代码示例
+
+```python
+class AstockTrading:
+    def __init__(self, strategy_name):
+        self.strategy_name = strategy_name
+        self.Dt = None
+        self.Open = None
+        self.High = None
+        self.Low = None
+        self.Close = None
+        self.Volume = None
+        self.ma10 = None
+
+        self.money = 100000  # 初始资金10w
+        self.isNewBar = False  # 初始设置为False
+        self.current_orders = {  #这里面的
+            'order1': {'open_price': 1,
+                       'open_datetime': '2022-03-03 9:30',
+                       'volume': 100,
+                       'close_price': 2,
+                       'close_datetime': 'xxxx'}
+        }
+        self.history_orders = {}
+        self.order_number = 0
+
+```
