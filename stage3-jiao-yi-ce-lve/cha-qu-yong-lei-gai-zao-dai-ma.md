@@ -47,12 +47,12 @@ class Animal:
         print("{},{}岁,{},睡觉".format(self.name, self.age, self.gender))
 
 
-a = Foo('jack', 10, '男')
+a = Animal('jack', 10, '男')
 a.eat()
 a.drink()
 a.sleep()
 
-b = Foo('rose', 11, '女')
+b = Animal('rose', 11, '女')
 b.eat()
 b.drink()
 b.sleep()
