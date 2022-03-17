@@ -23,7 +23,7 @@ Linus 为了管理 Linux 内核用了 10 天写出来的
 * macOS：`brew install git`
 * 验证安装： `git --version` 之后可能需要一些配置，使用时根据提示操作就好
 
-![](<../.gitbook/assets/image (1).png>)
+![](<../.gitbook/assets/image (1) (1).png>)
 
 ## 创建仓库
 
@@ -41,7 +41,7 @@ Linus 为了管理 Linux 内核用了 10 天写出来的
 
 ![git status 查看状态](<../.gitbook/assets/image (2) (1).png>)
 
-![文件状态的转换](<../.gitbook/assets/image (7) (1).png>)
+![文件状态的转换](<../.gitbook/assets/image (7) (1) (1).png>)
 
 ## 常用命令
 

@@ -41,7 +41,7 @@ HTML的本质就是一棵“树”，爬虫的目的就是从这个“树”中�
 
 ![什么是请求](<../.gitbook/assets/image (8).png>)
 
-![console中的request](<../.gitbook/assets/image (10).png>)
+![console中的request](<../.gitbook/assets/image (10) (1).png>)
 
 ### Response
 
@@ -52,7 +52,7 @@ HTML的本质就是一棵“树”，爬虫的目的就是从这个“树”中�
 * 响应体就是网页源代码，也就是用于解析数据的部分。\
   访问网页遇到的第一个文件一般都是document形式，都是网页源代码。然后解析内部的超链接，继续发起请求。
 
-![响应内容](<../.gitbook/assets/image (7).png>)
+![响应内容](<../.gitbook/assets/image (7) (1).png>)
 
 ![console中的response](<../.gitbook/assets/image (3) (1).png>)
 
