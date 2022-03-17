@@ -50,7 +50,7 @@ import pandas as pd # 引入 pandas 库，按惯例起别名 pd
 
 # 以下两种效果一样，如果是网址它会自动下载数据到内存
 df = pd.read_csv("https://box.nju.edu.cn/f/d1824584c6ef46bf8a83/?dl=1")
-df = pd.read_csv("./data/demo.csv")  # 文件在 notebook 文件同一目录下
+df = pd.read_csv("./data/demo.csv")  # 注意相对路径
 # 如果是 .xlsx 的话使用 pd.read_excel() ，还支持很多类型的数据读取
 ```
 

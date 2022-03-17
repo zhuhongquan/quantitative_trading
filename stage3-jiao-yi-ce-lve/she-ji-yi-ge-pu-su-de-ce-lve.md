@@ -26,7 +26,7 @@ MA是“移动平均线”的简称，后面的数字：5、10、20.....是时�
 
 ### 流程图
 
-![](<../.gitbook/assets/image (6).png>)
+![](<../.gitbook/assets/image (6) (1).png>)
 
 ### 代码模块设计
 
