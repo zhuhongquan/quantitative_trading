@@ -40,7 +40,7 @@ pip install pandas -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 * pandas.read\_csv(filepath\_or\_buffer, sep =',', usecols )
   * filepath\_or\_buffer: 文件路径（必填项）
-  * sep: 分隔符，默认用","隔开（注意，**" ,"和","是不同的分隔符，留心空格！**）
+  * sep: 分隔符，默认用","隔开（注意，**", "和","是不同的分隔符，留心空格！**）
   * usecols: 指定读取的列名，列表形式
 
 我们将数据读取到 pandas 里，变量名用 `df` DataFrame 的意思，它是 Pandas 二维数据的基础结构。
