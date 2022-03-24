@@ -11,7 +11,7 @@
 
 ## 如何解析网页
 
-![](<../.gitbook/assets/image (4) (1).png>)
+![](<../.gitbook/assets/image (4) (1) (1).png>)
 
 ### BeautifulSoup提取网页元素
 
