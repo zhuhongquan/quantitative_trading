@@ -25,25 +25,30 @@
 * [改进交易策略](stage3-jiao-yi-ce-lve/gai-jin-jiao-yi-ce-lve.md)
 * [\*实验3](stage3-jiao-yi-ce-lve/shi-yan-3.md)
 
-## STAGE4: 股票回测
+## STAGE4: 数据读写与图表绘制
 
-* [数据读写](stage4-gu-piao-hui-ce/shu-ju-du-xie.md)
-* [数据模拟](stage4-gu-piao-hui-ce/shu-ju-mo-ni.md)
-* [股票回测](stage4-gu-piao-hui-ce/gu-piao-hui-ce.md)
+* [数据读写](stage4-shu-ju-du-xie-yu-tu-biao-hui-zhi/shu-ju-du-xie.md)
+* [数据模拟](stage4-shu-ju-du-xie-yu-tu-biao-hui-zhi/shu-ju-mo-ni.md)
+* [图表绘制](stage4-shu-ju-du-xie-yu-tu-biao-hui-zhi/tu-biao-hui-zhi.md)
+* [\*实验4](stage4-shu-ju-du-xie-yu-tu-biao-hui-zhi/shi-yan-4.md)
 
-## STAGE5: 软件测试与质量保证
+## STAGE5: 进行历史回测
 
-* [添加注释](stage5-ruan-jian-ce-shi-yu-zhi-liang-bao-zheng/tian-jia-zhu-shi.md)
-* [调试测试](stage5-ruan-jian-ce-shi-yu-zhi-liang-bao-zheng/tiao-shi-ce-shi.md)
-* [编码风格规范示例](stage5-ruan-jian-ce-shi-yu-zhi-liang-bao-zheng/bian-ma-feng-ge-gui-fan-shi-li.md)
-* [可视化](stage5-ruan-jian-ce-shi-yu-zhi-liang-bao-zheng/ke-shi-hua.md)
+* [回测算法架构](stage5-jin-hang-li-shi-hui-ce/hui-ce-suan-fa-jia-gou.md)
+* [对多种策略进行回测](stage5-jin-hang-li-shi-hui-ce/dui-duo-zhong-ce-lve-jin-hang-hui-ce.md)
 
-## STAGE6: 进阶
+## STAGE6: 软件测试与质量保证
 
-* [用户偏好获取](stage6-jin-jie/yong-hu-pian-hao-huo-qu.md)
-* [自然语言处理](stage6-jin-jie/zi-ran-yu-yan-chu-li.md)
-* [AI模型](stage6-jin-jie/ai-mo-xing.md)
+* [添加注释](stage6-ruan-jian-ce-shi-yu-zhi-liang-bao-zheng/tian-jia-zhu-shi.md)
+* [调试测试](stage6-ruan-jian-ce-shi-yu-zhi-liang-bao-zheng/tiao-shi-ce-shi.md)
+* [编码风格规范示例](stage6-ruan-jian-ce-shi-yu-zhi-liang-bao-zheng/bian-ma-feng-ge-gui-fan-shi-li.md)
 
-## STAGE7: 发布和维护
+## STAGE7: 进阶
 
-* [发布和维护](stage7-fa-bu-he-wei-hu/fa-bu-he-wei-hu.md)
+* [用户偏好获取](stage7-jin-jie/yong-hu-pian-hao-huo-qu.md)
+* [自然语言处理](stage7-jin-jie/zi-ran-yu-yan-chu-li.md)
+* [AI模型](stage7-jin-jie/ai-mo-xing.md)
+
+## STAGE8: 发布和维护
+
+* [发布和维护](stage8-fa-bu-he-wei-hu/fa-bu-he-wei-hu.md)
