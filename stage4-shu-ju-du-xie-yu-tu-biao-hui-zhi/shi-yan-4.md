@@ -14,7 +14,7 @@ description: 以个人形式完成（非小组合作）
 
 1. 根据数据集中的半年数据，以天为单位绘制“招商银行”的**K线图（注意上涨与下跌要分别用红、绿来表示）**，<mark style="color:red;">不允许使用candlestick\_ohlc等K线图绘制库来直接实现</mark>，需要自己利用plt.vlines和plt.bars来绘制；
 2. 在上述K线图中叠加MA10线；
-3. 绘制对应的量能图。
+3. 绘制对应的量能图（使用turnoverVol，即成交量数据即可）。
 
 要求及提示：
 
