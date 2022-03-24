@@ -4,7 +4,7 @@
 
 最简单的反爬虫机制应该是U-A校验了。浏览器在发送请求的时候，会附带一部分浏览器及当前系统环境的参数给服务器，这部分数据放在HTTP请求的header部分。
 
-![](<../.gitbook/assets/image (2).png>)
+![](<../.gitbook/assets/image (2) (1).png>)
 
 我们要做的就是通过requests库设置我们的爬虫U-A。一般来说第三方库发送请求会有一个默认的U-A，如果我们直接用这个U-A，就等于直接告诉别人，我就是爬虫，快来禁我！有些网站如果不设置U-A是上不去的。requests库设置U-A也很简单。
 
@@ -41,4 +41,4 @@ requests.get(url, proxies=proxies)
 
 去斗鱼随便进一个直播间，在“检查”里查看人气值，观察一下是什么样子，还可以尝试复制网页上的这个文字，粘贴下来看看发生什么情况。
 
-![](<../.gitbook/assets/image (5) (1).png>)
+![](<../.gitbook/assets/image (5) (1) (1).png>)

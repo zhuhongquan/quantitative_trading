@@ -69,7 +69,6 @@ figure(num=None, figsize=None, dpi=None, facecolor=None, edgecolor=None, frameon
 
 ```python
 import matplotlib.pyplot as plt
-from dateutil.parser import parse
 import pandas as pd
 
 def read_data(path):
@@ -80,21 +79,76 @@ def read_data(path):
         data.append([row['tradeDate'], row['closePrice']])
     return data
 
-def draw():
+def draw_price():
     data = read_data("./data/600036_half_year.csv")
-    # 将时间字符串转换成时间格式，如果直接使用字符串会怎样？
-    time = [parse(line[0]) for line in data]
+    time = [line[0] for line in data]
     price = [line[1] for line in data]
     # 画布属性设置，分辨率参数-dpi，画布大小参数-figsize
-    # plt.figure(dpi=72, figsize=(15, 6))
+    plt.figure(dpi=72, figsize=(15, 6))
     # 定义title, x y轴
     plt.title('Price Line')
     plt.xlabel('Time')
+    # 设置x轴每隔15隔显示坐标
+    plt.xticks(range(0, len(time), 15))
     plt.ylabel('Price')
     # 分别设置x, y轴数据
     plt.plot(time, price, 'k-')
     plt.show()
 
 if __name__ == '__main__':
-    draw()
+    draw_price()
 ```
+
+## 绘制量能图
+
+大家自己试一下。
+
+## 合并两张图
+
+刚刚是分别绘制了两个图——价格折线图和量能图，但现在我想把这两个放在一张图中对比，该怎么实现？
+
+这就引出了一个概念，之前的绘图方式都是用`pyplot`的**API方式绘图**的，matplotlib本身是一个面向对象的绘图库，下面介绍一下**使用面向对象绘图方式**绘图，及产生网格，图例显示。
+
+整体思想是**先产生figure画布对象**，**在画布上产生子图对象**，接着调整坐标轴，标题，图例，网格，文字说明等，按照从大到小的顺序。
+
+看一个示例代码：
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.arange(1,10,1)  # 随便产生一点数据
+y = np.random.randn(len(x))
+
+fig = plt.figure()  #产生一个画布
+ax = fig.add_subplot(111) # 在画布上创建一个子图
+ax.plot(x,y)
+ax.set_title("object oriented")  #设置子图标题
+
+plt.show()
+```
+
+第8行代码add\_subplot()可能有点不能理解，关于它的介绍请看[https://blog.csdn.net/wyf2017/article/details/109297737](https://blog.csdn.net/wyf2017/article/details/109297737)
+
+在画布上创建两个子图(一行两列)，只显示一个：
+
+```python
+x = np.arange(1,100,1)
+
+fig = plt.figure()
+ax1 = fig.add_subplot(121)
+ax1.plot(x,x)
+
+plt.show()
+```
+
+![](<../.gitbook/assets/image (2).png>)
+
+在画布上创建两个子图(一行两列)，都显示出来：
+
+```python
+# 自己写一下代码，第二个子图的y参数设为x^2
+```
+
+![](<../.gitbook/assets/image (5).png>)
+

@@ -6,7 +6,7 @@
 
 以5min为周期的bar数据：[https://box.nju.edu.cn/f/be01e1fff94c44179ba3/?dl=1](https://box.nju.edu.cn/f/be01e1fff94c44179ba3/?dl=1)
 
-![600036\_5m.csv](<../.gitbook/assets/image (12).png>)
+![600036\_5m.csv](<../.gitbook/assets/image (12) (1).png>)
 
 ## 模拟任务
 
@@ -19,7 +19,7 @@
 
 ### 一个简单的思路
 
-![](<../.gitbook/assets/image (6).png>)
+![](<../.gitbook/assets/image (6) (1).png>)
 
 Open、High、Low、Close数据是文件中已经提供的，我们可以只需要模拟出剩下的数据即可，确保数据范围不高于High且不低于Low，并且每个周期的第0秒是Open价格，且最后一秒是Close价格。
 
