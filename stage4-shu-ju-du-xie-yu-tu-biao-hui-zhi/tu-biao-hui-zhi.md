@@ -130,6 +130,8 @@ plt.show()
 
 第8行代码add\_subplot()可能有点不能理解，关于它的介绍请看[https://blog.csdn.net/wyf2017/article/details/109297737](https://blog.csdn.net/wyf2017/article/details/109297737)
 
+### 创建子图
+
 在画布上创建两个子图(一行两列)，只显示一个：
 
 ```python
@@ -152,3 +154,28 @@ plt.show()
 
 ![](<../.gitbook/assets/image (5).png>)
 
+### **添加网格**
+
+```python
+x = np.arange(1,10)
+
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ax.plot(x,x*2)
+ax.grid(color='g',linestyle='--')
+
+plt.show()
+```
+
+### **显示图例**
+
+```python
+x = np.arange(1,11)
+
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ax.plot(x,x,label='inline label')  # 显示图例
+ax.legend()  # 显示图例
+
+plt.show()
+```
