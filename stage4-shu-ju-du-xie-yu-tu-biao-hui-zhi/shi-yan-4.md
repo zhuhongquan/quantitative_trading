@@ -12,7 +12,7 @@ description: 以个人形式完成（非小组合作）
 
 数据集下载地址：[https://box.nju.edu.cn/f/0b68d0b0c08b44f19604/?dl=1](https://box.nju.edu.cn/f/0b68d0b0c08b44f19604/?dl=1)
 
-1. 根据数据集中的半年数据，以天为单位绘制“招商银行”的**K线图（注意上涨与下跌要分别用红、绿来表示）**；
+1. 根据数据集中的半年数据，以天为单位绘制“招商银行”的**K线图（注意上涨与下跌要分别用红、绿来表示）**，<mark style="color:red;">不允许使用candlestick\_ohlc等K线图绘制库来直接实现</mark>，需要自己利用plt.vlines和plt.bars来绘制；
 2. 在上述K线图中叠加MA10线；
 3. 绘制对应的量能图。
 
