@@ -63,7 +63,8 @@ figure(num=None, figsize=None, dpi=None, facecolor=None, edgecolor=None, frameon
 * figsize: 指定figure的宽和高，单位为<mark style="color:red;">英寸</mark>；
 * dpi参数指定绘图对象的分辨率，即每英寸多少个像素，缺省值为80, 1英寸等于2.5cm, A4纸是 21\*30cm的纸张；
 * facecolor: 背景颜色；
-* edgecolor: 边框颜色 frameon:是否显示边框。
+* edgecolor: 边框颜色；
+* frameon:是否显示边框。
 
 ## 绘制价格折线图
 
