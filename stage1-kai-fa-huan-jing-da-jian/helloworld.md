@@ -34,7 +34,7 @@ Spyder的右下角是交互式编程区域，在此区域内，我们逐行输�
 
 然后点击"run"，运行该文件，终端便输出了结果。
 
-![](<../.gitbook/assets/image (6) (1) (1) (1).png>)
+![](<../.gitbook/assets/image (6) (1) (1) (1) (1).png>)
 
 ## Tips
 

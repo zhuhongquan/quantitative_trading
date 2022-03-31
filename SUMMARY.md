@@ -35,7 +35,8 @@
 ## STAGE5: 进行历史回测
 
 * [回测算法架构](stage5-jin-hang-li-shi-hui-ce/hui-ce-suan-fa-jia-gou.md)
-* [对多种策略进行回测](stage5-jin-hang-li-shi-hui-ce/dui-duo-zhong-ce-lve-jin-hang-hui-ce.md)
+* [对Stage3策略进行回测](stage5-jin-hang-li-shi-hui-ce/dui-stage3-ce-lve-jin-hang-hui-ce.md)
+* [\*实验5](stage5-jin-hang-li-shi-hui-ce/shi-yan-5.md)
 
 ## STAGE6: 软件测试与质量保证
 

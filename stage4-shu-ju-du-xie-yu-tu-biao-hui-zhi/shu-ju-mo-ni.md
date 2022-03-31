@@ -19,7 +19,7 @@
 
 ### 一个简单的思路
 
-![](<../.gitbook/assets/image (6) (1).png>)
+![](<../.gitbook/assets/image (6) (1) (1).png>)
 
 Open、High、Low、Close数据是文件中已经提供的，我们可以只需要模拟出剩下的数据即可，确保数据范围不高于High且不低于Low，并且每个周期的第0秒是Open价格，且最后一秒是Close价格。
 
