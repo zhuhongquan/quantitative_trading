@@ -66,6 +66,38 @@
 >
 > SerialNumber, Good, ODate, OTime, OPrice, BorS, Number, CDate, CTime, CPrice, Comment, Tax, Fee, PID, ID
 
-大家看到这里，或许会好奇，为什么没有盈亏字段呢？首先，通过原有的数据字段就可以计算出盈亏，为了避免表格字段过于冗长，所以不另外设置字段。另外，若要观察回测的效益，盈亏也并非绝对标准。怎么说呢？就好比一个回测程序虽然说一个月的总盈亏是-1000，但它并不代表就是一个不好的策略，或许买方的头寸净利是3000，卖方的头寸净利是-4000，只要将这个策略设置为只做买方，就会是一个赚钱的策略。除了盈亏，也有很多角度可以分析策略的好坏，例如:交易时间、 持仓时间等。除盈亏以外的分析对于交 易而言也是相当重要的，后面会有介绍。
+大家看到这里，或许会好奇，为什么没有盈亏字段呢？首先，通过原有的数据字段就可以计算出盈亏，为了避免表格字段过于冗长，所以不另外设置字段。另外，若要观察回测的效益，除盈亏以外的分析对于交易而言也是相当重要的，后面会有介绍。
 
 每个字段都具有存在的价值，而第一个字段交易序列号代表唯一值，所以每笔数据并不会发生重复的现象。上述交易回传格式不一定符合每种交易类型的需求，可以依照自己的需求做更改。 以下是开盘买、收盘卖的策略，做一个基础的交易回传明细：
+
+```python
+import pandas as pd
+
+data = []
+df = pd.read_csv("./data/600036_half_year.csv")
+for index, row in df.iterrows():
+    # 筛选你想要的数据
+    data.append(row)
+
+OrderTime = data[0]['tradeDate']  # 下单时间记录
+OrderPrice = data[0]['openPrice']  # 下单价格记录
+CoverTime = data[-1]['tradeDate']  # 卖出时间记录
+CoverPrice = data[-1]['closePrice']  # 卖出价格记录
+print("Buy OrderTime:", OrderTime, " OrderPrice:", OrderPrice,)
+print("SaleTime:", CoverTime, " SalePrice:", CoverPrice, " Profit:", CoverPrice-OrderPrice)
+```
+
+执行回测后，输出如下：
+
+```
+Buy OrderTime: 2021-09-24  OrderPrice: 48.45
+SaleTime: 2022-03-24  SalePrice: 45.77  Profit: -2.6799999999999997
+```
+
+注：最后的profit是浮点数精度问题，比如python中的0.1+0.2运算并不等于0.3。
+
+## 绩效计算
+
+读取交易记录后，就可以依照交易回传的数据去加以计算分析。绩效不仅可以从盈亏去观察，也可以从买卖、交易次数、交易时间点来进行分析。
+
+某些策略会符合某些时期的趋势条件，但不代表那些策略会符合长期市场的走势，毕竟交易市场是瞬息万变的，若要调试出一个长期稳定获利的策略，必须要经过长期回测的测试。&#x20;
