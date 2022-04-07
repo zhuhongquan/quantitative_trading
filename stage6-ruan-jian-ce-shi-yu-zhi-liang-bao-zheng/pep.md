@@ -1,4 +1,4 @@
-# 添加注释
+# PEP
 
 ## PEP是什么？
 
@@ -56,7 +56,7 @@ PEP 484 -- Type Hints，类型约束\
 PEP 492 -- Coroutines with async and await syntax，async/await语法\
 PEP 498 -- Literal String Interpolation Python，字符串插值\
 PEP 525 -- Asynchronous Generators，异步生成器\
-PEP 572 -- Assignment Expressions，表达式内赋值（最争议）\
+PEP 572 -- Assignment Expressions，表达式内赋值（[最争议](https://www.zhihu.com/question/274823057)）\
 PEP 3105 -- Make print a function，print改为函数\
 PEP 3115 -- Metaclasses in Python 3000，元类\
 PEP 3120 -- Using UTF-8 as the default source encoding\
@@ -65,4 +65,3 @@ PEP 8000 -- Python Language Governance Proposal Overview，GvR老爹推出决策
 
 {% embed url="https://www.zhihu.com/question/23484654" %}
 
-{% embed url="https://www.zhihu.com/question/274823057" %}
