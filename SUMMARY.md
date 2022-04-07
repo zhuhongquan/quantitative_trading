@@ -42,7 +42,7 @@
 
 * [PEP](stage6-ruan-jian-ce-shi-yu-zhi-liang-bao-zheng/pep.md)
 * [注释规范](stage6-ruan-jian-ce-shi-yu-zhi-liang-bao-zheng/zhu-shi-gui-fan.md)
-* [编码风格规范示例](stage6-ruan-jian-ce-shi-yu-zhi-liang-bao-zheng/bian-ma-feng-ge-gui-fan-shi-li.md)
+* [Python编码风格指南](stage6-ruan-jian-ce-shi-yu-zhi-liang-bao-zheng/python-bian-ma-feng-ge-zhi-nan.md)
 * [调试测试](stage6-ruan-jian-ce-shi-yu-zhi-liang-bao-zheng/tiao-shi-ce-shi.md)
 
 ## STAGE7: 进阶
