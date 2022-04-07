@@ -133,8 +133,40 @@ income = (gross_wages
 
 在函数中谨慎地使用空行来表示逻辑部分。
 
-### **源文件编码**
+## **源文件编码**
 
 Python核心发布中的代码应该始终使用UTF-8（或Python2中用ASCII）。&#x20;
 
 文件使用ASCII（Python2中）或UTF-8（Python3中）不应有编码声明。
+
+## import
+
+导入通常是单独一行，例如：
+
+```
+# Correct:
+import os
+import sys
+```
+
+```
+# Wrong:
+import sys, os
+```
+
+这样也是可以的：
+
+```
+# Correct:
+from subprocess import Popen, PIPE
+```
+
+**导入常常位于文件顶部**，在模块注释和字符串文档之后，在模块的全局变量和常量之前。
+
+导入应该按照以下顺序分组：
+
+1. 标准库导入
+2. 相关的第三方导入
+3. 特定的本地应用/库导入 在每个导入组之间放一行空行。
+
+## **模块级别的内置属性**
