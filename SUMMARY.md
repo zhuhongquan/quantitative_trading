@@ -41,8 +41,8 @@
 ## STAGE6: 软件测试与质量保证
 
 * [添加注释](stage6-ruan-jian-ce-shi-yu-zhi-liang-bao-zheng/tian-jia-zhu-shi.md)
-* [调试测试](stage6-ruan-jian-ce-shi-yu-zhi-liang-bao-zheng/tiao-shi-ce-shi.md)
 * [编码风格规范示例](stage6-ruan-jian-ce-shi-yu-zhi-liang-bao-zheng/bian-ma-feng-ge-gui-fan-shi-li.md)
+* [调试测试](stage6-ruan-jian-ce-shi-yu-zhi-liang-bao-zheng/tiao-shi-ce-shi.md)
 
 ## STAGE7: 进阶
 
