@@ -6,7 +6,7 @@
 
 以5min为周期的bar数据：[https://box.nju.edu.cn/f/be01e1fff94c44179ba3/?dl=1](https://box.nju.edu.cn/f/be01e1fff94c44179ba3/?dl=1)
 
-![600036\_5m.csv](<../.gitbook/assets/image (12) (1).png>)
+![600036\_5m.csv](<../.gitbook/assets/image (12) (1) (1).png>)
 
 ## 模拟任务
 
