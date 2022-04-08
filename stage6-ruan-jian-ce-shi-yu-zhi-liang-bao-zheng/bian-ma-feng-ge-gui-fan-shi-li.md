@@ -171,4 +171,149 @@ from subprocess import Popen, PIPE
 
 ## **模块级别的内置属性**
 
-模块级别的内置属性（名字有前后双下划线的），例如_\_\_all\_\__, **author**, **version**，应该放置在模块的文档字符串后，任意import语句之前，from \_\_future\_\_导入除外。Python强制要求from \_\_future\_\_导入必须在任何代码之前，只能在模块级文档字符串之后。
+模块级别的内置属性（名字有前后双下划线的），例如**\_\_all\_\_**, **author**, **version**，应该放置在模块的文档字符串后，任意import语句之前，from \_\_future\_\_导入除外。Python强制要求from \_\_future\_\_导入必须在任何代码之前，只能在模块级文档字符串之后。
+
+```python
+"""This is the example module.
+
+This module does stuff.
+"""
+
+from __future__ import barry_as_FLUFL
+
+__all__ = ['a', 'b', 'c']
+__version__ = '0.1'
+__author__ = 'Cardinal Biggles'
+
+import os
+import sys
+```
+
+## **字符串引号**
+
+Python中，单引号字符串和双引号字符串是一样的。但不建议如此。
+
+当一个字符串包含单引号字符或双引号字符时，**使用另一种字符串引号来避免字符串中使用反斜杠**。这提高可读性。
+
+三引号字符串，与PEP 257 文档字符串规范一致总是使用双引号字符。
+
+## **表达式和语句中的空格**
+
+以下情况避免使用多余的空格：
+
+（1）紧挨着小括号，中括号或大括号。
+
+```
+# Correct:
+spam(ham[1], {eggs: 2})
+```
+
+```
+# Wrong:
+spam( ham[ 1 ], { eggs: 2 } )
+```
+
+（2）在逗号和右括号之间：
+
+```
+# Correct:
+foo = (0,)
+```
+
+```
+# Wrong:
+bar = (0, )
+```
+
+（3）紧挨在逗号，分号或冒号前：
+
+```
+# Correct:
+if x == 4: print(x, y); x, y = y, x
+```
+
+```
+# Wrong:
+if x == 4 : print(x , y) ; x , y = y , x
+```
+
+（4）在切片中冒号像一个二元操作符，冒号两侧得有相等数量空格（把它看作最低优先级的操作符）。在一个扩展切片中，两个冒号必须有相等数量的空格。例外：当一个切片参数被省略时，该空格被省略。
+
+```python
+# Correct:
+ham[1:9], ham[1:9:3], ham[:9:3], ham[1::3], ham[1:9:]
+ham[lower:upper], ham[lower:upper:], ham[lower::step]
+ham[lower+offset : upper+offset]
+ham[: upper_fn(x) : step_fn(x)], ham[:: step_fn(x)]
+ham[lower + offset : upper + offset]
+
+# Wrong:
+ham[lower + offset:upper + offset]
+ham[1: 9], ham[1 :9], ham[1:9 :3]
+ham[lower : : upper]
+ham[ : upper]
+```
+
+（5）紧挨着左括号之前，函数调用的参数列表的开始处：
+
+```
+# Wrong:
+spam (1)
+```
+
+```
+# Correct:
+spam(1)
+```
+
+（6）紧挨着索引或切片开始的左括号之前：
+
+```
+# Correct:
+dct['key'] = lst[index]
+```
+
+```
+# Wrong:
+dct ['key'] = lst [index]
+```
+
+（7）为了与另外的赋值（或其它）操作符对齐，不止一个空格。
+
+```python
+# Correct:
+x = 1
+y = 2
+long_variable = 3
+```
+
+```python
+# Wrong:
+x             = 1
+y             = 2
+long_variable = 3
+```
+
+**其他建议**
+
+始终避免行尾空白。因为它们通常不可见，容易导致困惑：如果\后面跟了一个空格，它就不是一个有效的续行符了。很多编辑器不保存行尾空白，CPython项目中也设置了commit前检查以拒绝行尾空白的存在。
+
+始终在这些二元操作符的两边放置一个空格：赋值（= ），增强赋值（+= ，-= 等），比较（== ， < ， > ， != ， <> ， <= ， >= ，in ， not in ，is ，is not ），布尔（and ，or ，not ）。
+
+```python
+# Correct:
+i = i + 1
+submitted += 1
+x = x*2 - 1
+hypot2 = x*x + y*y
+c = (a+b) * (a-b)
+```
+
+```python
+# Wrong:
+i=i+1
+submitted +=1
+x = x * 2 - 1
+hypot2 = x * x + y * y
+c = (a + b) * (a - b)
+```

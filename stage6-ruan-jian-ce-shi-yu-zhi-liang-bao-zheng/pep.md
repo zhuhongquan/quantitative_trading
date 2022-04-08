@@ -4,7 +4,7 @@
 
 PEP的全称是Python Enhancement Proposals，其中Enhancement是增强改进的意思，Proposals则可译为提案或建议书，所以合起来，比较常见的翻译是Python增强提案或Python改进建议书。
 
-PEP的官网是：[https://peps.python.org/](https://peps.python.org)，这也就是PEP 0 的地址。其它PEP的地址是将编号拼接在后面，例如：[https://peps.python.org/pep-0013/](https://peps.python.org/pep-0013/) 就是PEP 13 的链接，以此类推。
+PEP的官网是：[https://peps.python.org/](https://peps.python.org)，这也就是PEP 0 的地址。其它PEP的地址是将编号拼接在后面，例如：[https://peps.python.org/pep-0008/](https://peps.python.org/pep-0008/)就是PEP 8 的链接，以此类推。
 
 第一个PEP诞生于2000年，距离现在已经22年了。到目前为止，它拥有不少于500个“兄弟姐妹”。
 
