@@ -26,7 +26,7 @@ pip install pandas -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 > [https://box.nju.edu.cn/f/d1824584c6ef46bf8a83/?dl=1](https://box.nju.edu.cn/f/d1824584c6ef46bf8a83/?dl=1)
 
-![](<../.gitbook/assets/image (11) (1).png>)
+![](<../.gitbook/assets/image (11) (1) (1).png>)
 
 这是一个学生各季度成绩总表（节选），各列说明：
 
@@ -78,7 +78,7 @@ df.set_index('name', inplace=True) # 建立索引并生效
 df.head() # 查看前 5 条，括号里可以传你想看的条数
 ```
 
-![](<../.gitbook/assets/image (7).png>)
+![](<../.gitbook/assets/image (7) (1).png>)
 
 ### 数据选取
 
