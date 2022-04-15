@@ -183,7 +183,7 @@ if __name__ == '__main__':
 ```python
 def triangle(a, b, c):
     if a + b > c and a + c > b and b + c > a:
-        if a != b != c:  #
+        if a != b != c:  # 等价于a!=b and b!=c，没有考虑到a!=c
             return '不规则三角形'
         elif a == b and a != c:
             return '等腰三角形'
@@ -199,7 +199,28 @@ def triangle(a, b, c):
         return '不是三角形'
 ```
 
-##
+可通过测试用例(3, 4, 3)来发现错误。
+
+正确写法：
+
+```python
+def triangle(a, b, c):
+    if a + b > c and a + c > b and b + c > a:
+        if a != b and b != c and a != c:
+            return '不规则三角形'
+        elif a == b and a != c:
+            return '等腰三角形'
+        elif a == c and a != b:
+            return '等腰三角形'
+        elif b == c and a != b:
+            return '等腰三角形'
+        elif a == b == c:
+            return '等边三角形'
+        else:
+            pass
+    else:
+        return '不是三角形'
+```
 
 ## 调试
 
