@@ -171,7 +171,7 @@ class TestDemo(unittest.TestCase):
 
 if __name__ == '__main__':
     # verbosity=*：默认是1；设为0，则不输出每一个用例的执行结果；2-输出详细的执行结果
-    unittest.main(verbosity=1)s
+    unittest.main(verbosity=1)
 ```
 
 上述这个例子就概括了unittest的基本使用。
@@ -183,7 +183,7 @@ if __name__ == '__main__':
 ```python
 def triangle(a, b, c):
     if a + b > c and a + c > b and b + c > a:
-        if a != b and b != c and a != c:
+        if a != b != c:  #
             return '不规则三角形'
         elif a == b and a != c:
             return '等腰三角形'
