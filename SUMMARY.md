@@ -52,6 +52,6 @@
 * [自然语言处理](stage7-jin-jie/zi-ran-yu-yan-chu-li.md)
 * [AI模型](stage7-jin-jie/ai-mo-xing.md)
 
-## STAGE8: 发布和维护
+## 大作业
 
-* [发布和维护](stage8-fa-bu-he-wei-hu/fa-bu-he-wei-hu.md)
+* [量化交易系统设计](da-zuo-ye/liang-hua-jiao-yi-xi-tong-she-ji.md)
