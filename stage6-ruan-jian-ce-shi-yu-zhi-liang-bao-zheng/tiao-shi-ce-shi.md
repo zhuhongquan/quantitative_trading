@@ -10,7 +10,7 @@ description: 本节将简单介绍一下测试的概念，学习如何在Python�
 
 ### 为什么要进行软件测试？
 
-![软件无处不在](<../.gitbook/assets/image (7).png>)
+![软件无处不在](<../.gitbook/assets/image (7) (1).png>)
 
 ### 什么是软件测试？
 
@@ -56,7 +56,7 @@ description: 本节将简单介绍一下测试的概念，学习如何在Python�
 
 软件开发过程是一个自顶向下、逐步细化的过程，而测试则是依相反的顺序安排的，自底向上、 逐步集成。低一级为上一级测试准备条件。当然不排除两者平行地进行。
 
-![](<../.gitbook/assets/image (11).png>)
+![](<../.gitbook/assets/image (11) (1).png>)
 
 ## 如何进行单元测试？
 

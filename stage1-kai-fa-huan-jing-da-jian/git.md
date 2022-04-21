@@ -41,7 +41,7 @@ Linus 为了管理 Linux 内核用了 10 天写出来的
 
 ![git status 查看状态](<../.gitbook/assets/image (2) (1) (1).png>)
 
-![文件状态的转换](<../.gitbook/assets/image (7) (1) (1) (1).png>)
+![文件状态的转换](<../.gitbook/assets/image (7) (1) (1) (1) (1).png>)
 
 ## 常用命令
 
