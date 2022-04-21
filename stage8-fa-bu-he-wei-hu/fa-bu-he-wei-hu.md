@@ -420,4 +420,4 @@ export default new Router({
 })
 ```
 
-[http://localhost:8080/login](http://localhost:8080/login)
+然后浏览器中输入网址[http://localhost:8080/login](http://localhost:8080/login)，就可以看到登录界面了！
