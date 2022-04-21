@@ -39,7 +39,7 @@ plt.plot(x, y, format\_string, \*\*kwargs)
 
 #### format\_string介绍：
 
-![颜色字符](<../.gitbook/assets/image (9) (1) (1).png>)
+![颜色字符](<../.gitbook/assets/image (9) (1) (1) (1).png>)
 
 ![风格字符](<../.gitbook/assets/image (4).png>)
 
@@ -153,7 +153,7 @@ plt.show()
 # 自己写一下代码，第二个子图的y参数设为x^2
 ```
 
-![](<../.gitbook/assets/image (5) (1).png>)
+![](<../.gitbook/assets/image (5) (1) (1).png>)
 
 ### **添加网格**
 
@@ -168,7 +168,7 @@ ax.grid(color='g',linestyle='--')
 plt.show()
 ```
 
-![](<../.gitbook/assets/image (9) (1).png>)
+![](<../.gitbook/assets/image (9) (1) (1).png>)
 
 ### **显示图例**
 
@@ -183,4 +183,4 @@ ax.legend()  # 显示图例
 plt.show()
 ```
 
-![](<../.gitbook/assets/image (5).png>)
+![](<../.gitbook/assets/image (5) (1).png>)

@@ -18,7 +18,7 @@ pip install pandas -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 我们的数据大部分存在于文件当中，所以pandas会支持复杂的IO操作，pandas的API支持众多的文件格式，如CSV、SQL、XLS、JSON、HDF5。
 
-![](<../.gitbook/assets/image (10) (1) (1).png>)
+![](<../.gitbook/assets/image (10) (1) (1) (1).png>)
 
 其中，最常用的是HDF5和CSV文件。我们课程中主要使用CSV文件进行数据的存储和读取，下面以CSV文件为例进行介绍。
 

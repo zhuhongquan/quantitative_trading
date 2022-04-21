@@ -20,13 +20,13 @@ HTML的本质就是一棵“树”，爬虫的目的就是从这个“树”中�
 
 第四步：保存数据。解析得到的数据可以多种形式，如文本，音频，视频保存在本地。
 
-![](<../.gitbook/assets/image (9) (1) (1) (1).png>)
+![](<../.gitbook/assets/image (9) (1) (1) (1) (1).png>)
 
 ## 请求与响应
 
 爬虫最主要的任务就是发起请求(Request)，然后获取服务器的响应(Response)。
 
-![](<../.gitbook/assets/image (8) (1) (1).png>)
+![](<../.gitbook/assets/image (8) (1) (1) (1).png>)
 
 ### Request
 
@@ -39,9 +39,9 @@ HTML的本质就是一棵“树”，爬虫的目的就是从这个“树”中�
 * 请求头：请求头（header）就是告诉服务器你是谁，包括User-gaget,Host,Cookies等信息。添加请求头信息，保证请求合法
 * 请求体：请求时包含的额外数据，如POST请求需要输入的表单数据，一般用于模拟登陆。
 
-![什么是请求](<../.gitbook/assets/image (8) (1).png>)
+![什么是请求](<../.gitbook/assets/image (8) (1) (1).png>)
 
-![console中的request](<../.gitbook/assets/image (10) (1) (1) (1).png>)
+![console中的request](<../.gitbook/assets/image (10) (1) (1) (1) (1).png>)
 
 ### Response
 

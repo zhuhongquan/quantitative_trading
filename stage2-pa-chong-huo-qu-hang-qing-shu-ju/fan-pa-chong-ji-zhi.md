@@ -41,4 +41,4 @@ requests.get(url, proxies=proxies)
 
 去斗鱼随便进一个直播间，在“检查”里查看人气值，观察一下是什么样子，还可以尝试复制网页上的这个文字，粘贴下来看看发生什么情况。
 
-![](<../.gitbook/assets/image (5) (1) (1) (1).png>)
+![](<../.gitbook/assets/image (5) (1) (1) (1) (1).png>)
