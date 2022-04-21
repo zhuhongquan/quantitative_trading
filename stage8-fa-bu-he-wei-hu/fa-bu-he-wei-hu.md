@@ -135,11 +135,13 @@ description: 基于本课程前面部分所讲知识，完成一个量化交易�
 
 ### 前端基础教程
 
+先甩一个我觉得讲得比较详细的入门教程：[https://blog.csdn.net/play\_big\_knife/article/details/111715598](https://blog.csdn.net/play\_big\_knife/article/details/111715598)
+
 前端选用Vue，可以采用node+npm+vue/cli(vue脚手架)的方式来快速搭建Vue项目
 
 你可能需要自行补习的知识：
 
-Node.js，npm，vue.js，vue-cli
+Node.js，npm，vue.js，vue-cli以及非常复杂且多的前端知识。
 
 #### 安装node环境
 
@@ -202,7 +204,7 @@ Node.js，npm，vue.js，vue-cli
 * assets:放置一些图片(会根据图片大小分类进行base64命名还是其他方式命名)，如logo等
 * components:目录里放的是一个个的组件文件
 * router/index.js：配置路由的地方
-* App.vue：项目入口组件（跟组件），我们也可以将组件写这里，而不使用components目录。主要作用就是将我们自己定义的组件通过它与页面建立联系进行渲染，这里面的必不可少。
+* App.vue：项目入口组件（根组件），我们也可以将组件写这里，而不使用components目录。主要作用就是将我们自己定义的组件通过它与页面建立联系进行渲染，这里面的必不可少。
 * main.js ：项目的核心文件（整个项目的入口js）引入依赖包、默认页面样式等（项目运行后会在index.html中形成一个app.js文件）。
 * static：静态资源目录(会原分不动的对文件进行处理)，如图片、字体等。
 * test：初始测试目录，可删除
@@ -258,4 +260,164 @@ PyCharm中点击“File”菜单中的“Settings”项，在打开的对话框�
 ![](<../.gitbook/assets/image (16).png>)
 
 现在用PyCharm菜单中的“Open”选项打开刚刚创建成功的Vue项目，如下图所示：
+
+![](<../.gitbook/assets/image (18).png>)
+
+图中所示的是vue/cli脚手架创建的Vue项目结构图，关于每个文件或目录的功能，在前面已经介绍过。
+
+下面就写一个登录页面。
+
+#### 登录页面
+
+参考文章：[https://www.jianshu.com/p/e8aae5bc49cd](https://www.jianshu.com/p/e8aae5bc49cd)
+
+首先，在main.js中导入element-ui
+
+```jsx
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
+```
+
+在assets文件下新建css文件夹，新建global.css
+
+```css
+/*全局样式表*/
+html,body,#app{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+```
+
+在main.js 中导入
+
+```dart
+import './assets/css/global.css';
+```
+
+在components文件夹下新建登录页面Login.vue，将以下内容复制进去
+
+```n4js
+<template>
+  <div class="login_container">
+    <div class="login_box">
+      <div class="avatar_box">
+        <img src="../assets/logo.png" alt="">
+      </div>
+      <el-form label-width="0px" class="login_in">
+        <el-form-item prop="username">
+          <el-input type="text" prefix-icon="el-icon-user"></el-input>
+        </el-form-item>
+        <el-form-item prop="password">
+          <el-input type="password" prefix-icon="el-icon-thumb"></el-input>
+        </el-form-item>
+        <el-form-item class="btns">
+          <el-button type="primary">登录</el-button>
+          <el-button>重置</el-button>
+        </el-form-item>
+      </el-form>
+    </div>
+  </div>
+</template>
+
+<script>
+    export default {
+        name: "Login",
+        data(){
+            return {
+                loginForm:{
+                    userName:'',
+                    passWord:''
+                },
+                rules:{
+                    userName:[
+                        { required: true, message: '请输入用户名', trigger: 'blur' },
+                        { min: 3, max: 8, message: '长度在 3 到 8 个字符', trigger: 'blur' }
+                    ],
+                    passWord:[
+                        { required: true, message: '请输入活动名称', trigger: 'blur' },
+                        { min: 6, max: 16, message: '长度在 6 到 16 个字符', trigger: 'blur' }
+                    ]
+                }
+            }
+        }
+    }
+</script>
+
+<style scoped>
+  .login_container {
+    background-color: #42b983;
+    height: 100%;
+  }
+
+  .login_box {
+    width: 450px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 3px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .login_box .avatar_box {
+    height: 130px;
+    width: 130px;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ddd;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 10px;
+  }
+
+  .login_box .avatar_box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #eee;
+  }
+
+  .btns {
+    display: flex;
+    justify-content: flex-end;
+
+  }
+
+  .login_in {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+</style>
+
+
+```
+
+router文件夹下index.js添加一些内容
+
+```jsx
+import Login from '../components/Login'
+
+export default new Router({
+  routes: [
+    {
+      path: '/',
+      name: 'HelloWorld',
+      component: HelloWorld
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
+    }
+  ]
+})
+```
 
