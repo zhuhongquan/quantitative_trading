@@ -269,7 +269,7 @@ PyCharm中点击“File”菜单中的“Settings”项，在打开的对话框�
 
 #### 登录页面
 
-参考文章：[https://www.jianshu.com/p/e8aae5bc49cd](https://www.jianshu.com/p/e8aae5bc49cd)
+参考文章：[https://www.jianshu.com/p/e8aae5bc49cd](https://www.jianshu.com/p/e8aae5bc49cd)，里面有错误，所以还是看下面的代码
 
 首先，在main.js中导入element-ui
 
@@ -420,3 +420,4 @@ export default new Router({
 })
 ```
 
+[http://localhost:8080/login](http://localhost:8080/login)
