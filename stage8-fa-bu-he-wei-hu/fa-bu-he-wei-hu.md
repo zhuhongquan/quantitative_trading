@@ -396,8 +396,6 @@ import './assets/css/global.css';
     box-sizing: border-box;
   }
 </style>
-
-
 ```
 
 router文件夹下index.js添加一些内容
@@ -406,6 +404,7 @@ router文件夹下index.js添加一些内容
 import Login from '../components/Login'
 
 export default new Router({
+  mode: "history",
   routes: [
     {
       path: '/',
