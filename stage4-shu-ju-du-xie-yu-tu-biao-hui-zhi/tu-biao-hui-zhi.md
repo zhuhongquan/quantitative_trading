@@ -39,7 +39,7 @@ plt.plot(x, y, format\_string, \*\*kwargs)
 
 #### format\_string介绍：
 
-![颜色字符](<../.gitbook/assets/image (9) (1).png>)
+![颜色字符](<../.gitbook/assets/image (9) (1) (1).png>)
 
 ![风格字符](<../.gitbook/assets/image (4).png>)
 
@@ -168,7 +168,7 @@ ax.grid(color='g',linestyle='--')
 plt.show()
 ```
 
-![](<../.gitbook/assets/image (9).png>)
+![](<../.gitbook/assets/image (9) (1).png>)
 
 ### **显示图例**
 
