@@ -127,7 +127,15 @@ description: 基于本课程前面部分所讲知识，完成一个量化交易�
 * 新闻表——存放爬取的新闻
 * ......
 
-### 后端设计
+### 后端基础教程(Tornado)
+
+#### 安装Tornado
+
+pip install tornado
+
+#### 创建一个Tornado项目
+
+我给大家提供了一个Tornado项目的模板：
 
 
 
@@ -427,4 +435,91 @@ export default new Router({
 我们先安装一个东西——jQuery，它是一个js中能帮助我们发送post请求的工具：[https://www.csdn.net/tags/MtjaggysNzQ0Mi1ibG9n.html](https://www.csdn.net/tags/MtjaggysNzQ0Mi1ibG9n.html)
 
 然后我们就可以在Login.vue中为登录按钮编写方法，实现发送post请求了。
+
+Vue中有几种发送post请求的方法，例如axios，ajax等等，这边采用jquery的ajax方法，我们需要在项目中安装jquery，看这个教程：[https://www.jianshu.com/p/baee4ff78c27](https://www.jianshu.com/p/baee4ff78c27)
+
+```python
+import tornado.web
+import tornado.httpserver
+import tornado.ioloop
+import tornado.options
+from tornado.escape import json_decode, json_encode
+
+
+class BaseHandler(tornado.web.RequestHandler):
+    def __init__(self, *argc, **argkw):
+        super(BaseHandler, self).__init__(*argc, **argkw)
+
+    # 解决跨域问题
+    def set_default_headers(self):
+        self.set_header("Access-Control-Allow-Origin", "*")  # 写成*需要Vue前端withCredentials设置为false，否则要写前端域名
+        self.set_header("Access-Control-Allow-Methods", "POST, GET, OPTIONS")
+        self.set_header("Access-Control-Allow-Headers", "*")
+        self.set_header("Access-Control-Max-Age", 1000)
+        self.set_header("Content-type", "application/json")
+
+    def get(self):
+        self.write('request get')
+
+    def post(self):
+        self.write('request post')
+
+    # vue一般需要访问options方法， 如果报错则很难继续，所以只要通过就行了，当然需要其他逻辑就自己控制。
+    def options(self):
+        # # 返回方法1
+        # self.set_status(204)
+        # self.finish()
+        # # 返回方法2
+        self.write(json_encode({"code": "0", "Message": "success"}))
+
+
+class mainHandler(BaseHandler):
+    # 主页
+    # @tornado.web.authenticated
+    def get(self, *args, **kwargs):
+        self.write("Hello!")
+
+
+class LoginHandler(BaseHandler):
+    """
+    登录接口
+    """
+    def post(self):
+        # 获取用户登录的用户名
+        try:
+            username = self.get_argument('username')
+            password = self.get_argument('password')
+            print(username, password)
+            if username == 'admin' and password == 'admin':
+                self.write(json_encode({'code': 0, "result": "success"}))
+        except Exception as e:
+            print("无法解析数据", e)
+            self.write(json_encode({'code': 1000, "result": "请求的参数错误！"}))
+
+
+class Application(tornado.web.Application):
+    def __init__(self):
+        handlers = [
+            (r'/', mainHandler),
+            (r'/login', LoginHandler),
+        ]
+
+        settings = {
+            'template_path': 'templates',
+            'static_path': 'static',
+            "cookie_secret": "bZJc2sWbQLKos6GkHn/VB9oXwQt8S0R0kRvJ5/xJ89E=",
+            "login_url": "/login"
+        }
+
+        tornado.web.Application.__init__(self, handlers, **settings)
+
+
+if __name__ == '__main__':
+    tornado.options.parse_command_line()
+    app = tornado.httpserver.HTTPServer(Application())
+    app.listen(8000)
+    print("Tornado server is ready for service: http://localhost:8000/\r")
+    tornado.ioloop.IOLoop.instance().start()
+
+```
 
