@@ -307,13 +307,13 @@ import './assets/css/global.css';
       </div>
       <el-form label-width="0px" class="login_in">
         <el-form-item prop="username">
-          <el-input type="text" prefix-icon="el-icon-user"></el-input>
+          <el-input v-model=loginForm.userName type="text" prefix-icon="el-icon-user"></el-input>
         </el-form-item>
         <el-form-item prop="password">
-          <el-input type="password" prefix-icon="el-icon-thumb"></el-input>
+          <el-input v-model=loginForm.passWord type="password" prefix-icon="el-icon-thumb"></el-input>
         </el-form-item>
         <el-form-item class="btns">
-          <el-button type="primary">登录</el-button>
+          <el-button type="primary" @click="submitForm('loginForm')">登录</el-button>
           <el-button>重置</el-button>
         </el-form-item>
       </el-form>
@@ -421,3 +421,12 @@ export default new Router({
 ```
 
 然后浏览器中输入网址[http://localhost:8080/login](http://localhost:8080/login)，就可以看到登录界面了！
+
+到现在为止，我们只是做了个界面，如何能使得”登录“起作用（也就是发送数据给后端）？
+
+这就涉及到之前讲的get/post请求。
+
+我们先安装一个东西——jQuery，它是一个js中能帮助我们发送post请求的工具：[https://www.csdn.net/tags/MtjaggysNzQ0Mi1ibG9n.html](https://www.csdn.net/tags/MtjaggysNzQ0Mi1ibG9n.html)
+
+然后我们就可以在Login.vue中为登录按钮编写方法，实现发送post请求了。
+
