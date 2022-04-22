@@ -221,9 +221,7 @@ Node.js，npm，vue.js，vue-cli以及非常复杂且多的前端知识。
 
 这就是整个项目的目录结构，其中，我们<mark style="color:red;">主要在src目录中做修改（模块化开发）</mark>。这个项目现在还只是一个结构框架，整个项目需要的依赖资源都还没有安装。
 
-cd 项目文件夹名，进入项目中。
-
-安装项目所需要的依赖包/插件（在package.json可查看）：执行 npm install (如果npm有警告，这里可以用cnpm代替npm，**运行别人的代码一定先安装依赖**)。如果创建项目的时候没有报错，这一步可以省略。如果报错了，cd到项目里面运行 npm install。
+cd 项目文件夹名，进入项目中，**如果你前面初始化项目时npm install没有成功，请看下面步骤**，成功了请忽略——安装项目所需要的依赖包/插件（在package.json可查看）：执行 npm install (如果npm没有成功，这里可以用cnpm代替npm，**运行别人的代码一定先安装依赖**)。
 
 **若拿到别人的项目或从github上下载的项目，第一步就是要在项目中npm install；下载项目所依赖的插件，然后npm run dev 运行项目。**
 
@@ -290,7 +288,7 @@ html,body,#app{
 }
 ```
 
-在main.js 中导入
+在main.js 中导入（添加一行）
 
 ```dart
 import './assets/css/global.css';
@@ -398,7 +396,7 @@ import './assets/css/global.css';
 </style>
 ```
 
-router文件夹下index.js添加一些内容
+router文件夹下index.js添加一些内容（<mark style="color:red;">注意是添加</mark>，不是覆盖源文件！）
 
 ```jsx
 import Login from '../components/Login'
