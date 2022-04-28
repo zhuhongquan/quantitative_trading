@@ -575,7 +575,7 @@ axios.defaults.baseURL='http://localhost:8000/'
 注意，这边不能和前面的ajax方法同时存在，只能选择一种。
 
 ```javascript
-methods: {
+  methods: {
     submitForm(formName) {
       let config = {
         // 关于comnteng-type，看https://www.jb51.net/article/145209.htm
