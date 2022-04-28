@@ -344,7 +344,7 @@ cd 项目文件夹名，进入项目中，**如果你前面初始化项目时npm
 
 PyCharm中点击“File”菜单中的“Settings”项，在打开的对话框中，左边的树形结构有“plugins”插件的选项，然后在右边的“Marketplace”中找到“Vue”的选项。如下图所示。
 
-![](<../.gitbook/assets/image (16).png>)
+![](<../.gitbook/assets/image (16) (1).png>)
 
 现在用PyCharm菜单中的“Open”选项打开刚刚创建成功的Vue项目，如下图所示：
 
@@ -392,11 +392,11 @@ import './assets/css/global.css';
       <div class="avatar_box">
         <img src="../assets/logo.png" alt="">
       </div>
-      <el-form label-width="0px" class="login_in">
-        <el-form-item prop="username">
+      <el-form label-width="0px" class="login_in" :rules="rules">
+        <el-form-item prop="userName">
           <el-input v-model=loginForm.userName type="text" prefix-icon="el-icon-user"></el-input>
         </el-form-item>
-        <el-form-item prop="password">
+        <el-form-item prop="passWord">
           <el-input v-model=loginForm.passWord type="password" prefix-icon="el-icon-thumb"></el-input>
         </el-form-item>
         <el-form-item class="btns">
@@ -409,80 +409,84 @@ import './assets/css/global.css';
 </template>
 
 <script>
-    export default {
-        name: "Login",
-        data(){
-            return {
-                loginForm:{
-                    userName:'',
-                    passWord:''
-                },
-                rules:{
-                    userName:[
-                        { required: true, message: '请输入用户名', trigger: 'blur' },
-                        { min: 3, max: 8, message: '长度在 3 到 8 个字符', trigger: 'blur' }
-                    ],
-                    passWord:[
-                        { required: true, message: '请输入活动名称', trigger: 'blur' },
-                        { min: 6, max: 16, message: '长度在 6 到 16 个字符', trigger: 'blur' }
-                    ]
-                }
-            }
-        }
+export default {
+  name: "Login",
+  data() {
+    return {
+      loginForm: {
+        userName: '',
+        passWord: ''
+      },
+      rules: {
+        userName: [
+          {required: true, message: '请输入用户名', trigger: 'blur'},
+          {min: 3, max: 8, message: '长度在 3 到 8 个字符', trigger: 'blur'}
+        ],
+        passWord: [
+          {required: true, message: '请输入密码', trigger: 'blur'},
+          {min: 6, max: 16, message: '长度在 6 到 16 个字符', trigger: 'blur'}
+        ]
+      }
     }
+  },
+  methods: {
+    
+  }
+}
 </script>
 
 <style scoped>
-  .login_container {
-    background-color: #42b983;
-    height: 100%;
-  }
+.login_container {
+  background-color: #42b983;
+  height: 100%;
+}
 
-  .login_box {
-    width: 450px;
-    height: 300px;
-    background-color: #fff;
-    border-radius: 3px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
+.login_box {
+  width: 450px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 3px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 
-  .login_box .avatar_box {
-    height: 130px;
-    width: 130px;
-    border: 1px solid #eee;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #ddd;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 10px;
-  }
+.login_box .avatar_box {
+  height: 130px;
+  width: 130px;
+  border: 1px solid #eee;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ddd;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 10px;
+}
 
-  .login_box .avatar_box img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-color: #eee;
-  }
+.login_box .avatar_box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #eee;
+}
 
-  .btns {
-    display: flex;
-    justify-content: flex-end;
+.btns {
+  display: flex;
+  justify-content: flex-end;
 
-  }
+}
 
-  .login_in {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 0 20px;
-    box-sizing: border-box;
-  }
+.login_in {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
 </style>
+
 ```
 
 router文件夹下index.js添加一些内容（<mark style="color:red;">注意是添加</mark>，不是覆盖源文件！）
@@ -513,94 +517,82 @@ export default new Router({
 
 这就涉及到之前讲的get/post请求。
 
+Vue中有几种发送post请求的方法，例如axios，ajax等等，这边把两种方法都写在这里，但是建议大家之后使用主流的axios方法。
+
+**（1）ajax方法**
+
 我们先安装一个东西——jQuery，它是一个js中能帮助我们发送post请求的工具：[https://www.csdn.net/tags/MtjaggysNzQ0Mi1ibG9n.html](https://www.csdn.net/tags/MtjaggysNzQ0Mi1ibG9n.html)
 
 然后我们就可以在Login.vue中为登录按钮编写方法，实现发送post请求了。
 
-Vue中有几种发送post请求的方法，例如axios，ajax等等，这边采用jquery的ajax方法，我们需要在项目中安装jquery，看这个教程：[https://www.jianshu.com/p/baee4ff78c27](https://www.jianshu.com/p/baee4ff78c27)
+采用jquery的ajax方法，我们需要在项目中安装jquery，看这个教程：[https://www.jianshu.com/p/baee4ff78c27](https://www.jianshu.com/p/baee4ff78c27)
+
+装完之后，我们就在methods里面为按钮编写方法：
 
 ```python
-import tornado.web
-import tornado.httpserver
-import tornado.ioloop
-import tornado.options
-from tornado.escape import json_decode, json_encode
+  methods: {
+    submitForm(formName) {
+      let data =  {username: this.loginForm.userName, password: this.loginForm.passWord};
 
-
-class BaseHandler(tornado.web.RequestHandler):
-    def __init__(self, *argc, **argkw):
-        super(BaseHandler, self).__init__(*argc, **argkw)
-
-    # 解决跨域问题
-    def set_default_headers(self):
-        self.set_header("Access-Control-Allow-Origin", "*")  # 写成*需要Vue前端withCredentials设置为false，否则要写前端域名
-        self.set_header("Access-Control-Allow-Methods", "POST, GET, OPTIONS")
-        self.set_header("Access-Control-Allow-Headers", "*")
-        self.set_header("Access-Control-Max-Age", 1000)
-        self.set_header("Content-type", "application/json")
-
-    def get(self):
-        self.write('request get')
-
-    def post(self):
-        self.write('request post')
-
-    # vue一般需要访问options方法， 如果报错则很难继续，所以只要通过就行了，当然需要其他逻辑就自己控制。
-    def options(self):
-        # # 返回方法1
-        # self.set_status(204)
-        # self.finish()
-        # # 返回方法2
-        self.write(json_encode({"code": "0", "Message": "success"}))
-
-
-class mainHandler(BaseHandler):
-    # 主页
-    # @tornado.web.authenticated
-    def get(self, *args, **kwargs):
-        self.write("Hello!")
-
-
-class LoginHandler(BaseHandler):
-    """
-    登录接口
-    """
-    def post(self):
-        # 获取用户登录的用户名
-        try:
-            username = self.get_argument('username')
-            password = self.get_argument('password')
-            print(username, password)
-            if username == 'admin' and password == 'admin':
-                self.write(json_encode({'code': 0, "result": "success"}))
-        except Exception as e:
-            print("无法解析数据", e)
-            self.write(json_encode({'code': 1000, "result": "请求的参数错误！"}))
-
-
-class Application(tornado.web.Application):
-    def __init__(self):
-        handlers = [
-            (r'/', mainHandler),
-            (r'/login', LoginHandler),
-        ]
-
-        settings = {
-            'template_path': 'templates',
-            'static_path': 'static',
-            "cookie_secret": "bZJc2sWbQLKos6GkHn/VB9oXwQt8S0R0kRvJ5/xJ89E=",
-            "login_url": "/login"
+      // ajax方式发送请求
+      $.ajax({
+        url: 'http://localhost:8000/login',  //接受请求的链接
+        type: 'POST',                        //请求方式，还有GET
+        data: data,                          //要发送的数据
+        dataType: 'json',
+        //contentType : 'application/json',
+        success: function (data, status, xhr) {
+          // Do Anything After get Return data
+        },
+        Error: function (xhr, error, exception) {
+          // handle the error.
+          alert(exception.toString());
         }
-
-        tornado.web.Application.__init__(self, handlers, **settings)
-
-
-if __name__ == '__main__':
-    tornado.options.parse_command_line()
-    app = tornado.httpserver.HTTPServer(Application())
-    app.listen(8000)
-    print("Tornado server is ready for service: http://localhost:8000/\r")
-    tornado.ioloop.IOLoop.instance().start()
-
+      });
+    }
+  }
 ```
 
+**（2）axios方法：**
+
+第一步：安装axios包，我们依然在这个项目目录中打开终端，输入命令：\
+`npm install --save axios`
+
+第二步：在vue的 main.js中导入axios
+
+![](<../.gitbook/assets/image (16).png>)
+
+第三步：设计默认路由前缀
+
+继续在main.js中添加一行，这是因为我们日后请求的路径很多，但他们的前缀都一样，我们可以设置统一的前缀，这边就是我们的后端服务器http://localhost:8000/
+
+```
+axios.defaults.baseURL='http://localhost:8000/'
+```
+
+第四步：在Login.vue中编写对应方法
+
+注意，这边不能和前面的ajax方法同时存在，只能选择一种。
+
+```javascript
+methods: {
+    submitForm(formName) {
+      let config = {
+        // 关于comnteng-type，看https://www.jb51.net/article/145209.htm
+        headers: {
+          'Content-Type': 'application/json'  //默认是这个
+          // 'Content-Type': 'multipart/form-data'
+          // 'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      }
+      let data =  {username: this.loginForm.userName, password: this.loginForm.passWord};
+
+      // axios方式发送请求
+      this.$axios.post('/login', data, config).then(response => {
+        console.log(response.data)
+      }).catch(function (error) { // 请求失败处理
+          console.log(error);
+        });
+    }
+  }
+```
