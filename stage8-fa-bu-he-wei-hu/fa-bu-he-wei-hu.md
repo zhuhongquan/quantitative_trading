@@ -392,7 +392,7 @@ import './assets/css/global.css';
       <div class="avatar_box">
         <img src="../assets/logo.png" alt="">
       </div>
-      <el-form label-width="0px" class="login_in" :rules="rules">
+      <el-form label-width="0px" class="login_in" ref="loginForm" :model="loginForm" :rules="rules">
         <el-form-item prop="userName">
           <el-input v-model=loginForm.userName type="text" prefix-icon="el-icon-user"></el-input>
         </el-form-item>
@@ -414,17 +414,17 @@ export default {
   data() {
     return {
       loginForm: {
-        userName: '',
-        passWord: ''
+        userName: undefined,
+        passWord: undefined
       },
       rules: {
         userName: [
           {required: true, message: '请输入用户名', trigger: 'blur'},
-          {min: 3, max: 8, message: '长度在 3 到 8 个字符', trigger: 'blur'}
+          {min: 3, max: 8, message: '长度在3到8个字符', trigger: 'blur'}
         ],
         passWord: [
           {required: true, message: '请输入密码', trigger: 'blur'},
-          {min: 6, max: 16, message: '长度在 6 到 16 个字符', trigger: 'blur'}
+          {min: 5, max: 16, message: '长度在5到16个字符', trigger: 'blur'}
         ]
       }
     }
