@@ -517,7 +517,7 @@ export default new Router({
 
 这就涉及到之前讲的get/post请求。
 
-Vue中有几种发送post请求的方法，例如axios，ajax等等，这边把两种方法都写在这里，但是建议大家之后使用主流的axios方法。
+Vue中有几种发送post请求的方法，例如axios，ajax等等，这边把两种方法都写在这里，但是<mark style="color:red;">**建议大家之后使用主流的axios方法**</mark>。
 
 **（1）ajax方法**
 
