@@ -76,14 +76,24 @@ class LoginHandler(BaseHandler):
     def post(self):
         # 获取用户登录的用户名
         try:
-            username = self.get_argument('username')
-            password = self.get_argument('password')
+            # 1.处理axios的数据，Content-Type: application/json， b'{"username":"admin","password":"admin"}'
+            data = json.loads(self.request.body)  # json.dumps
+            username = data['username']
+            password = data['password']
+            mysql = MySQL()
+            sql_str = "select * from user where username='{}' and password='{}'".format(username, password)
+            res = mysql.query(sql_str)
+            if len(res) > 0:  # 用户名密码正确
+                self.write(json_encode({'code': 0, "msg": "success"}))
+            else:
+                self.write(json_encode({'code': 1, "msg": "error"}))
+            # 2.获取ajax发送过来的请求，'Content-Type': 'application/x-www-form-urlencoded',  b'username=admin&password=admin'
+            # username = self.get_argument('username')
+            # password = self.get_argument('password')
             print(username, password)
-            if username == 'admin' and password == 'admin':
-                self.write(json_encode({'code': 0, "result": "success"}))
         except Exception as e:
             print("无法解析数据", e)
-            self.write(json_encode({'code': 1000, "result": "请求的参数错误！"}))
+            self.write(json_encode({'code': 1000, "msg": "请求的参数错误！"}))
 
 
 class Application(tornado.web.Application):
