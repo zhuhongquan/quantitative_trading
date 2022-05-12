@@ -103,9 +103,65 @@ model.add(Dense(100))
 model.add(Dense(units=1))
 model.add(Activation('relu'))
 
-start = time.time()
+start = time.time()  # 记录一下模型训练时间
 model.compile(loss='mean_squared_error', optimizer='Adam')
 # 打印模型结构信息
 model.summary()
 ```
 
+## 训练模型及预测
+
+设置了个时间，很快，半分钟都不到就训练完50个epoch。validation\_split=0.1表示拿出训练集的10%作为验证集，有了验证集能够更好的训练模型，就相当于给模型纠错。 verbose=2表示打印出每个epoch的信息，默认是1，1的话就更好看，因为有个进度条和时间。大家不妨试试。这里有个history，意思也很容易理解，训练的历史过程（相当于是记录下来里面训练过程的一些参数变化吧。有一个很重要的就是"loss"）。&#x20;
+
+```python
+history = model.fit(trainX, trainY, batch_size=64, epochs=50, validation_split=0.1, verbose=2)
+print('compilation time:', time.time()-start)
+```
+
+训练完就可以把数据丢进去预测了
+
+```
+trainPredict = model.predict(trainX)
+testPredict = model.predict(testX)
+```
+
+因为前面进行了归一化，现在的数据都是0-1之间的，这里的作用就是反归一化，让它恢复原来数据范围。
+
+```python
+trainPredict = scaler.inverse_transform(trainPredict)
+trainY = scaler.inverse_transform(trainY)
+testPredict = scaler.inverse_transform(testPredict)
+testY = scaler.inverse_transform(testY)
+```
+
+## 画图
+
+接下来的操作是为了画图，首先empty\_like方法表示创建一个空数组，这个空数组很像dataset，为什么呢，因为维度一样，但是值还没初始化。然后我们让其全为空后进行填值。最后一行的操作相当于是一个100个数值的数值，我填了前面70个，因为前面70个是我训练集的预测值，后面30为空。&#x20;
+
+```python
+trainPredictPlot = np.empty_like(dataset)
+trainPredictPlot[:] = np.nan
+trainPredictPlot = np.reshape(trainPredictPlot, (dataset.shape[0], 1))
+trainPredictPlot[look_back: len(trainPredict)+look_back, :] = trainPredict
+```
+
+那么这里同理，一个100个数值的数值，前面70个为空，那么后面30个就由测试集的预测值来填充。
+
+```python
+testPredictPlot = np.empty_like(dataset)
+testPredictPlot[:] = np.nan
+testPredictPlot = np.reshape(testPredictPlot, (dataset.shape[0], 1))
+testPredictPlot[len(trainPredict)+(look_back*2)+1: len(dataset)-1, :] = testPredict
+```
+
+最后是画图
+
+```python
+fig2 = plt.figure(figsize=(20, 15))
+plt.plot(scaler.inverse_transform(dataset))
+plt.plot(trainPredictPlot)
+plt.plot(testPredictPlot)
+plt.ylabel('price')
+plt.xlabel('date')
+plt.show()
+```

@@ -48,7 +48,7 @@
 
 ## STAGE7: 进阶
 
-* [用AI模型预测股票走势](stage7-jin-jie/yong-ai-mo-xing-yu-ce-gu-piao-zou-shi.md)
+* [用AI模型预测股票走势](stage7-jin-jie/ai-mo-xing.md)
 
 ## 大作业
 
