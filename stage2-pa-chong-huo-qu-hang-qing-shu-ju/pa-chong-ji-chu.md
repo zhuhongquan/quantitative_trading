@@ -41,7 +41,7 @@ HTML的本质就是一棵“树”，爬虫的目的就是从这个“树”中�
 
 ![什么是请求](<../.gitbook/assets/image (8) (1) (1).png>)
 
-![console中的request](<../.gitbook/assets/image (10) (1) (1) (1) (1).png>)
+![console中的request](<../.gitbook/assets/image (10) (1) (1) (1) (1) (1).png>)
 
 ### Response
 

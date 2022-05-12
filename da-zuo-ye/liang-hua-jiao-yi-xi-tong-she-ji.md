@@ -146,7 +146,7 @@ Node.js，npm，vue.js，vue-cli以及非常复杂且多的前端知识。
 
 ![](<../.gitbook/assets/image (8).png>)
 
-![](<../.gitbook/assets/image (10).png>)
+![](<../.gitbook/assets/image (10) (1).png>)
 
 再运行一个命令：`npm i -g @vue/cli-init`，这是用来初始化vue2.X项目的。
 
@@ -228,7 +228,7 @@ cd 项目文件夹名，进入项目中，**如果你前面初始化项目时npm
 
 项目启动后，在浏览器中输入项目启动后的地址：
 
-![](<../.gitbook/assets/image (12).png>)
+![](<../.gitbook/assets/image (12) (1).png>)
 
 这样，vue/cli脚本架就搭建成一个vue的项目。
 

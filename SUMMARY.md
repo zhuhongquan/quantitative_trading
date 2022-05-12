@@ -48,9 +48,7 @@
 
 ## STAGE7: 进阶
 
-* [用户偏好获取](stage7-jin-jie/yong-hu-pian-hao-huo-qu.md)
-* [自然语言处理](stage7-jin-jie/zi-ran-yu-yan-chu-li.md)
-* [AI模型](stage7-jin-jie/ai-mo-xing.md)
+* [用AI模型预测股票走势](stage7-jin-jie/yong-ai-mo-xing-yu-ce-gu-piao-zou-shi.md)
 
 ## 大作业
 

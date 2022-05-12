@@ -43,7 +43,7 @@ plt.plot(x, y, format\_string, \*\*kwargs)
 
 ![风格字符](<../.gitbook/assets/image (4).png>)
 
-![标记字符](<../.gitbook/assets/image (11) (1) (1).png>)
+![标记字符](<../.gitbook/assets/image (11) (1) (1) (1).png>)
 
 ### plt.figure()
 
