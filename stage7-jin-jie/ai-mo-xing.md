@@ -171,3 +171,16 @@ plt.show()
 需要说明一点，前面对测试集的预测，仍然拿的是第n天前面的真实数据去预测第n天的价格，那么我如果想预测明天、后天、大后天的价格该怎么办？因为对于后天来说，我目前没有明天的真实数据，所以我们要先对明天的价格做一个预测，然后把明天的价格作为输入，去预测后天的价格，以此类推，这样我们就能预测出后面n的价格，但这种基于预测的预测，越往后肯定越不具有参考意义。
 
 具体如何去预测后面n天的价格，大家可以看[这篇文章](https://blog.csdn.net/m0\_53306549/article/details/117195301)。
+
+核心部分是这块代码：
+
+```python
+for i in range(7):
+    Xtest = testx[-look_back:]  # Xtest 是testx -100到最后的数据，共100个  
+    Xtest = np.reshape(Xtest,(1,1,look_back))
+    testy = model.predict(Xtest)
+    testx[look_back+i] = testy
+    testPredict[i] = testy
+```
+
+这段代码想要预测后面7天的数据，它要进行7次循环，每次都是把新预测出来的价格加入test集里，然后再把新加入的数据作为输入，让模型去预测。
